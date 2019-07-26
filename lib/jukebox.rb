@@ -44,23 +44,22 @@ def exit_jukebox
   puts "Goodbye"
 end
 
-def run(songs)
+	def run(songs)
   help
-  puts "Please enter a command:"
-  menu_input = gets.chomp
-  
-  while menu_input
-    case menu_input
-    when menu_input == "help"
-      help
-    when menu_input == "list"
+  input = nil
+
+   until input == "exit"
+  puts "Please enter a command: "
+  input = gets.chomp
+  case input
+    when "list"
       list(songs)
-    when menu_input == "play"
+    when "play"
       play(songs)
-    when menu_input == "exit"
+    when "help"
+      help
+    when "exit"
       exit_jukebox
-      break
-    end
-  
-  
+  end
+end
 end
