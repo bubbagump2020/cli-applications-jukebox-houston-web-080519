@@ -43,22 +43,18 @@ def exit_jukebox
   puts "Goodbye"
 end
 
-def run(songs)
+	def run(songs)
   help
   puts "Please enter a command:"
-  command = gets.chomp.downcase
-  case command
-  when "help"
-    p help
-  when "list"
-    list(songs)
-  when "play"
-    play(songs)
-  when "exit"
-    exit_jukebox
-  else
-    puts "Invalid Command"
-
-   end
-
- end
+  answer = ""
+  until answer == "exit"
+    answer = gets.chomp
+    if answer == "list"
+      list(songs)
+    elsif answer == "play"
+      play(songs)
+    elsif answer == "exit"
+      exit_jukebox
+    end
+  end
+end
