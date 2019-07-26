@@ -26,18 +26,17 @@ def list(songs)
   end
 end
 
-def play(songs)
-  puts "Please enter a song name or number:"
-  input = gets.chomp
-  puts input.class
-  songs.each_with_index { |song, song_place|
-    puts song.class
-    if input == (song_place + 1).to_s || song.upcase.include?(input.upcase)
-      puts "#{song} is now playing"
-    else
-      puts "Invalid input, please try again"
+	def play(songs) #plays a song from songs
+    puts "Please enter a song name or number:"
+    selection = gets.chomp
+    songs.each.with_index do |title, index|
+      track = "#{index+1}"
+      if selection == title || selection == track
+        puts "Playing #{title}"
+      else
+        puts "Invalid input, please try again"
+      end
     end
-  }
 end
 
 def exit_jukebox
