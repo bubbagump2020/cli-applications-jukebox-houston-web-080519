@@ -49,7 +49,7 @@ def run(songs)
   command = gets.chomp.downcase
   case command
   when "help"
-    help
+    p help
   when "list"
     list(songs)
   when "play"
