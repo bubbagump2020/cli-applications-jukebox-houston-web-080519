@@ -11,7 +11,7 @@ songs = [
   "Amos Lee - Keep It Loose, Keep It Tight"
 ]
 
-def help #lists help functions
+def help 
   puts "I accept the following commands:"
   puts "- help : displays this help message"
   puts "- list : displays a list of songs you can play"
@@ -26,7 +26,7 @@ def list(songs)
   end
 end
 
-	def play(songs) #plays a song from songs
+def play(songs)
     puts "Please enter a song name or number:"
     selection = gets.chomp
     songs.each.with_index do |title, index|
@@ -43,7 +43,7 @@ def exit_jukebox
   puts "Goodbye"
 end
 
-	def run(songs)
+def run(songs)
   help
   puts "Please enter a command:"
   answer = ""
